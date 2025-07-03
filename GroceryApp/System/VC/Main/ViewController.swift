@@ -7,11 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SplashVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+            let splashVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "OnBoradingVC") as! OnBoradingVC
+            self.navigationController?.pushViewController(splashVC, animated: true)
+        }
     }
 
 

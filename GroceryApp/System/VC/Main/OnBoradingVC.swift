@@ -19,7 +19,7 @@ struct Introduction {
     }
 }
 
-class SplashScreenVC: UIViewController {
+class OnBoradingVC: UIViewController {
 
     @IBOutlet weak var lblHeading: UILabel!
     @IBOutlet weak var imgLogo: UIImageView!
