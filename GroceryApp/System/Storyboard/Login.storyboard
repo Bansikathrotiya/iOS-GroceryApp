@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bKU-pb-nS4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bLO-sH-qte">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
@@ -274,10 +274,11 @@
                             <constraint firstItem="HZq-oB-737" firstAttribute="trailing" secondItem="fWL-Ux-1Uy" secondAttribute="trailing" id="yj4-6q-F1V"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Pbb-ia-FyJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ig-oU-L54" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="828" y="1.3493253373313345"/>
+            <point key="canvasLocation" x="1767.2" y="1.3493253373313345"/>
         </scene>
         <!--Forgot PasswordVC-->
         <scene sceneID="s0d-6b-0kx">
@@ -396,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1560.8" y="0.44977511244377816"/>
+            <point key="canvasLocation" x="2500" y="0.44977511244377816"/>
         </scene>
         <!--Verify NumberVC-->
         <scene sceneID="DkW-jB-7K7">
@@ -562,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l9A-Gt-3yA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2302" y="1"/>
+            <point key="canvasLocation" x="3240.8000000000002" y="0.44977511244377816"/>
         </scene>
         <!--OtpVC-->
         <scene sceneID="xTY-P8-Dxv">
@@ -788,7 +789,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGO-OC-TYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3061.5999999999999" y="0.44977511244377816"/>
+            <point key="canvasLocation" x="4000.8000000000002" y="0.44977511244377816"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CUg-7U-dFV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="bLO-sH-qte" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yi4-bz-WvP">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bKU-pb-nS4" kind="relationship" relationship="rootViewController" id="aus-EF-41X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JgD-ef-L8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="1.3493253373313345"/>
         </scene>
     </scenes>
     <resources>

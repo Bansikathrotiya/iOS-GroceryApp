@@ -13,6 +13,12 @@
 		186E01612E178FC300752E13 /* VerifyNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E01602E178FC300752E13 /* VerifyNumberVC.swift */; };
 		186E01632E17967100752E13 /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E01622E17967100752E13 /* OtpVC.swift */; };
 		186E01652E17976B00752E13 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186E01642E17976B00752E13 /* TabBar.storyboard */; };
+		186E01682E1798A100752E13 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E01672E1798A100752E13 /* TabBarVC.swift */; };
+		186E016A2E17A8F700752E13 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E01692E17A8F700752E13 /* HomeVC.swift */; };
+		186E016D2E17AC2B00752E13 /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E016C2E17AC2B00752E13 /* CategoriesCollectionViewCell.xib */; };
+		186E016E2E17AC2B00752E13 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E016B2E17AC2B00752E13 /* CategoriesCollectionViewCell.swift */; };
+		186E01722E17B27900752E13 /* featuredProductsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E01712E17B27900752E13 /* featuredProductsCollectionViewCell.xib */; };
+		186E01732E17B27900752E13 /* featuredProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E01702E17B27900752E13 /* featuredProductsCollectionViewCell.swift */; };
 		18C8439B2E164E4D0065863B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C843912E164E4D0065863B /* AppDelegate.swift */; };
 		18C8439C2E164E4D0065863B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C843982E164E4D0065863B /* SceneDelegate.swift */; };
 		18C8439D2E164E4D0065863B /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C843992E164E4D0065863B /* SplashVC.swift */; };
@@ -59,6 +65,12 @@
 		186E01602E178FC300752E13 /* VerifyNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerifyNumberVC.swift; path = GroceryApp/System/VC/Login/VerifyNumberVC.swift; sourceTree = SOURCE_ROOT; };
 		186E01622E17967100752E13 /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = SOURCE_ROOT; };
 		186E01642E17976B00752E13 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		186E01672E1798A100752E13 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		186E01692E17A8F700752E13 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		186E016B2E17AC2B00752E13 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		186E016C2E17AC2B00752E13 /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
+		186E01702E17B27900752E13 /* featuredProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = featuredProductsCollectionViewCell.swift; sourceTree = "<group>"; };
+		186E01712E17B27900752E13 /* featuredProductsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = featuredProductsCollectionViewCell.xib; sourceTree = "<group>"; };
 		18C843912E164E4D0065863B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18C843922E164E4D0065863B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18C843932E164E4D0065863B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,6 +134,27 @@
 				186E01622E17967100752E13 /* OtpVC.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		186E01662E17986900752E13 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				186E016F2E17AC3200752E13 /* XIB */,
+				186E01672E1798A100752E13 /* TabBarVC.swift */,
+				186E01692E17A8F700752E13 /* HomeVC.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		186E016F2E17AC3200752E13 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				186E016B2E17AC2B00752E13 /* CategoriesCollectionViewCell.swift */,
+				186E016C2E17AC2B00752E13 /* CategoriesCollectionViewCell.xib */,
+				186E01702E17B27900752E13 /* featuredProductsCollectionViewCell.swift */,
+				186E01712E17B27900752E13 /* featuredProductsCollectionViewCell.xib */,
+			);
+			path = XIB;
 			sourceTree = "<group>";
 		};
 		18C843542E164E3F0065863B = {
@@ -208,6 +241,7 @@
 		18C843AE2E164E7E0065863B /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				186E01662E17986900752E13 /* TabBar */,
 				186E015B2E1787CB00752E13 /* Login */,
 				18C843B82E1666E50065863B /* Signup */,
 				18C843B12E1659AB0065863B /* Main */,
@@ -365,9 +399,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C8439E2E164E4D0065863B /* Assets.xcassets in Resources */,
+				186E01722E17B27900752E13 /* featuredProductsCollectionViewCell.xib in Resources */,
 				18C843B02E1654C50065863B /* Color.xcassets in Resources */,
 				186E015A2E1787A100752E13 /* Login.storyboard in Resources */,
 				18C843A02E164E4D0065863B /* LaunchScreen.storyboard in Resources */,
+				186E016D2E17AC2B00752E13 /* CategoriesCollectionViewCell.xib in Resources */,
 				18C843B72E1666A00065863B /* Signup.storyboard in Resources */,
 				186E01652E17976B00752E13 /* TabBar.storyboard in Resources */,
 				18C843A12E164E4D0065863B /* Main.storyboard in Resources */,
@@ -464,14 +500,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186E01732E17B27900752E13 /* featuredProductsCollectionViewCell.swift in Sources */,
 				18C8439B2E164E4D0065863B /* AppDelegate.swift in Sources */,
 				18C843BA2E1667050065863B /* SignupVC.swift in Sources */,
 				186E015D2E1787E400752E13 /* LoginVC.swift in Sources */,
 				18C8439C2E164E4D0065863B /* SceneDelegate.swift in Sources */,
 				18C843BC2E16671D0065863B /* WelcomeVC.swift in Sources */,
 				18C8439D2E164E4D0065863B /* SplashVC.swift in Sources */,
+				186E016E2E17AC2B00752E13 /* CategoriesCollectionViewCell.swift in Sources */,
 				186E01612E178FC300752E13 /* VerifyNumberVC.swift in Sources */,
 				186E015F2E178C9A00752E13 /* ForgotPasswordVC.swift in Sources */,
+				186E01682E1798A100752E13 /* TabBarVC.swift in Sources */,
+				186E016A2E17A8F700752E13 /* HomeVC.swift in Sources */,
 				186E01632E17967100752E13 /* OtpVC.swift in Sources */,
 				18C843B32E1659DC0065863B /* OnBoradingVC.swift in Sources */,
 			);
