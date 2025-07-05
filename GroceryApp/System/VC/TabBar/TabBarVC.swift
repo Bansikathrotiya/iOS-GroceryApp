@@ -13,6 +13,8 @@ class TabBarVC: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        user.set(true, forKey: "IsFirstTime")
     }
     
 

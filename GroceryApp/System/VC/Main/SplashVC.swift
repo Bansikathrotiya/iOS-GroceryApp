@@ -7,6 +7,8 @@
 
 import UIKit
 
+var user = UserDefaults.standard
+
 class SplashVC: UIViewController {
 
     override func viewDidLoad() {
@@ -14,8 +16,14 @@ class SplashVC: UIViewController {
         // Do any additional setup after loading the view.
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-            let onBoradingVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "OnBoradingVC") as! OnBoradingVC
-            self.navigationController?.pushViewController(onBoradingVC, animated: true)
+            
+            if user.bool(forKey: "IsFirstTime") {
+                let tabbarVC = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC")
+                self.navigationController?.setViewControllers([tabbarVC], animated: true)
+            } else {
+                let onboardingVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnBoradingVC")
+                self.navigationController?.setViewControllers([onboardingVC], animated: true)
+            }
         }
     }
 

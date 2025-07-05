@@ -41,6 +41,8 @@ class OnBoradingVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        user.set(false, forKey: "IsFirstTime")
+        
         self.page_Instruction.numberOfPages = intro.count
         updateUI()
     }
