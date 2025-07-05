@@ -137,6 +137,8 @@
                                                     </imageView>
                                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="mX7-mp-zgw">
                                                         <rect key="frame" x="130.5" y="254" width="74" height="26"/>
+                                                        <color key="pageIndicatorTintColor" name="Color_EBFFD7"/>
+                                                        <color key="currentPageIndicatorTintColor" name="Color_28B446"/>
                                                     </pageControl>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -269,6 +271,9 @@
                                                 <color key="tintColor" name="Color_868889"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="chevron.right" catalog="system"/>
+                                                <connections>
+                                                    <action selector="clickOnAboutMe:" destination="XlF-F9-f4v" eventType="touchUpInside" id="KNN-cm-Mtg"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oac-c9-fca">
                                                 <rect key="frame" x="0.0" y="3" width="25" height="24"/>
@@ -498,6 +503,9 @@
                                                 <color key="tintColor" name="Color_868889"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="chevron.right" catalog="system"/>
+                                                <connections>
+                                                    <action selector="clickOnNotification:" destination="XlF-F9-f4v" eventType="touchUpInside" id="Pyu-CS-4Fs"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JCN-dj-DyQ">
                                                 <rect key="frame" x="0.0" y="2.5" width="25" height="24.5"/>
@@ -638,18 +646,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tyy-ib-Kpj">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Cart" translatesAutoresizingMaskIntoConstraints="NO" id="cRi-qG-Y6N">
+                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="kcO-sn-VCu"/>
+                                    <constraint firstAttribute="height" constant="100" id="t4C-ib-d7h"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your cart is empty !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjk-qg-5Vf">
+                                <rect key="frame" x="20" y="423.5" width="335" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" name="Color_000000"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7z-3b-W5B">
+                                <rect key="frame" x="50" y="452.5" width="275" height="36"/>
+                                <string key="text">You will get a response within
+a few minutes.</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="textColor" name="Color_868889"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ra4-vt-2wc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tyy-ib-Kpj" firstAttribute="leading" secondItem="ra4-vt-2wc" secondAttribute="leading" id="3ka-ou-58J"/>
-                            <constraint firstItem="ra4-vt-2wc" firstAttribute="trailing" secondItem="tyy-ib-Kpj" secondAttribute="trailing" id="BKb-vi-F8Y"/>
-                            <constraint firstItem="tyy-ib-Kpj" firstAttribute="top" secondItem="ra4-vt-2wc" secondAttribute="top" id="VkH-7K-kCF"/>
-                            <constraint firstItem="ra4-vt-2wc" firstAttribute="bottom" secondItem="tyy-ib-Kpj" secondAttribute="bottom" id="oy6-Lx-1T0"/>
+                            <constraint firstItem="cjk-qg-5Vf" firstAttribute="top" secondItem="cRi-qG-Y6N" secondAttribute="bottom" constant="40" id="0bz-pz-0Lz"/>
+                            <constraint firstItem="cRi-qG-Y6N" firstAttribute="centerY" secondItem="Wcx-rr-lDo" secondAttribute="centerY" id="8Yr-Av-M2P"/>
+                            <constraint firstItem="c7z-3b-W5B" firstAttribute="leading" secondItem="ra4-vt-2wc" secondAttribute="leading" constant="50" id="Chg-RO-Lfg"/>
+                            <constraint firstItem="c7z-3b-W5B" firstAttribute="top" secondItem="cjk-qg-5Vf" secondAttribute="bottom" constant="5" id="LLx-B0-Jxh"/>
+                            <constraint firstItem="cjk-qg-5Vf" firstAttribute="leading" secondItem="ra4-vt-2wc" secondAttribute="leading" constant="20" id="Ok1-Xl-Hd6"/>
+                            <constraint firstItem="ra4-vt-2wc" firstAttribute="trailing" secondItem="cjk-qg-5Vf" secondAttribute="trailing" constant="20" id="P72-2R-Jad"/>
+                            <constraint firstItem="cRi-qG-Y6N" firstAttribute="centerX" secondItem="Wcx-rr-lDo" secondAttribute="centerX" id="Urr-mk-s4c"/>
+                            <constraint firstItem="ra4-vt-2wc" firstAttribute="trailing" secondItem="c7z-3b-W5B" secondAttribute="trailing" constant="50" id="cGC-TF-1dg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="6v7-PR-vaM">
@@ -668,9 +697,6 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
-                    <connections>
-                        <outlet property="tableview" destination="tyy-ib-Kpj" id="OGQ-Ub-JLf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJr-4h-oa9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -715,6 +741,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cart" width="49.5" height="57.5"/>
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="bell" catalog="system" width="125" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
@@ -738,6 +765,9 @@
         </namedColor>
         <namedColor name="Color_868889">
             <color red="0.52549019607843139" green="0.53333333333333333" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color_EBFFD7">
+            <color red="0.92156862745098034" green="1" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Color_F4F5F9">
             <color red="0.95686274509803926" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

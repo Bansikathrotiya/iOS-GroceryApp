@@ -32,6 +32,9 @@
                                         <color key="tintColor" name="Color_FFFFFF"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="arrow.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="clickOnBack:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cqT-kv-fhY"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBQ-DY-YpH">
                                         <rect key="frame" x="129.5" y="4.5" width="76.5" height="21.5"/>
@@ -109,6 +112,9 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="clickOnSignup:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bcL-91-8Ry"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="MFX-sM-cDY">
                                         <rect key="frame" x="77.5" y="264" width="220.5" height="30"/>
@@ -126,6 +132,9 @@
                                                 <state key="normal" title="Login">
                                                     <color key="titleColor" name="Color_000000"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="clickOnLogin:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="h7P-xl-15F"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <userDefinedRuntimeAttributes>
@@ -206,6 +215,9 @@
                                         <color key="tintColor" name="Color_FFFFFF"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="arrow.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="clickOnBack:" destination="fLW-Vn-Rmj" eventType="touchUpInside" id="E9x-dJ-VNa"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signup" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrJ-1m-8VE">
                                         <rect key="frame" x="138.5" y="4.5" width="58" height="21.5"/>
@@ -267,6 +279,9 @@
                                                         <real key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="clickOnSignup:" destination="fLW-Vn-Rmj" eventType="touchUpInside" id="j4O-ZZ-rV6"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7qI-dJ-l6m">
                                                 <rect key="frame" x="20" y="93" width="335" height="190"/>
@@ -384,6 +399,9 @@
                                                         <state key="normal" title="Login">
                                                             <color key="titleColor" name="Color_000000"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="clickOnLogin:" destination="fLW-Vn-Rmj" eventType="touchUpInside" id="be4-xV-z5k"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <userDefinedRuntimeAttributes>
@@ -444,6 +462,11 @@
                             <constraint firstItem="0zN-Ay-zUN" firstAttribute="top" secondItem="KZp-mQ-bfB" secondAttribute="top" id="xSV-5Y-5cM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="7km-5d-Q0C" id="1LJ-h7-Jvh"/>
+                        <outlet property="txtPassword" destination="LIY-BA-9a3" id="4ph-3b-8kk"/>
+                        <outlet property="txtPhone" destination="MBx-Es-9xk" id="uXJ-lc-5nW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2D-R8-gKU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

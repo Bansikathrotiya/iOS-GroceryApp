@@ -32,6 +32,9 @@
                                         <color key="tintColor" name="Color_FFFFFF"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="arrow.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="clickOnBack:" destination="bKU-pb-nS4" eventType="touchUpInside" id="DCp-q6-FMg"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWX-kn-LdY">
                                         <rect key="frame" x="145" y="4.5" width="45.5" height="21.5"/>
@@ -93,6 +96,9 @@
                                                         <real key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="clickOnLogin:" destination="bKU-pb-nS4" eventType="touchUpInside" id="9O4-VE-Iqy"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vSI-9P-nQk">
                                                 <rect key="frame" x="20" y="93" width="335" height="125"/>
@@ -183,6 +189,9 @@
                                                         <state key="normal" title="Sign up">
                                                             <color key="titleColor" name="Color_000000"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="clickOnSignup:" destination="bKU-pb-nS4" eventType="touchUpInside" id="jix-Lx-Jkx"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <userDefinedRuntimeAttributes>
@@ -217,6 +226,9 @@
                                                         <state key="normal" title="Forgot password">
                                                             <color key="titleColor" name="Color_407EC7"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="clickOnForgotPassword:" destination="bKU-pb-nS4" eventType="touchUpInside" id="gp9-kr-9a6"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -275,6 +287,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pbb-ia-FyJ"/>
+                    <connections>
+                        <outlet property="txtEmail" destination="Qhz-2e-Fis" id="nAi-P5-ebx"/>
+                        <outlet property="txtPassword" destination="lqr-5X-Lhe" id="JE1-jY-WHj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ig-oU-L54" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -300,6 +316,9 @@
                                         <color key="tintColor" name="Color_000000"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="arrow.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="clickOnBack:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="t1M-oY-DMS"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Recovery" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aup-Kc-Y6h">
                                         <rect key="frame" x="87" y="4.5" width="161" height="21.5"/>
@@ -343,6 +362,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickOnSendLink:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tID-aS-F7F"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgg-5t-GmS">
                                 <rect key="frame" x="20" y="277" width="335" height="60"/>
@@ -394,6 +416,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iW8-h3-PWW" secondAttribute="trailing" constant="40" id="wYn-DH-5Iq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="drM-7E-Xzv" id="fZ2-Yn-rhK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -419,6 +444,9 @@
                                         <color key="tintColor" name="Color_000000"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="arrow.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="clickOnBack:" destination="z6u-Dl-mMN" eventType="touchUpInside" id="nxe-tc-j7S"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmS-Qp-xa5">
                                         <rect key="frame" x="108" y="4.5" width="119" height="21.5"/>
@@ -462,6 +490,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickOnNext:" destination="z6u-Dl-mMN" eventType="touchUpInside" id="BZP-Jp-imv"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lmh-Gy-Npz">
                                 <rect key="frame" x="20" y="277" width="335" height="60"/>
@@ -560,6 +591,13 @@
                             <constraint firstItem="sqZ-n5-SzL" firstAttribute="leading" secondItem="nsO-lD-0Aw" secondAttribute="leading" constant="20" id="xIa-vm-vRm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnDown" destination="cbg-DY-sbF" id="oAf-zQ-CIF"/>
+                        <outlet property="imgCountry" destination="rqy-cT-AyZ" id="Zsn-S8-dVw"/>
+                        <outlet property="lblCountryName" destination="vuj-cA-0ZJ" id="2Q9-mP-GZV"/>
+                        <outlet property="lblTimer" destination="dq4-ae-Q18" id="D3V-Yr-8my"/>
+                        <outlet property="txtNumber" destination="qZh-Va-Ldm" id="xzl-ie-rjs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l9A-Gt-3yA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -585,6 +623,9 @@
                                         <color key="tintColor" name="Color_000000"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="arrow.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="clickOnBack:" destination="Pxj-qH-HM1" eventType="touchUpInside" id="g5J-vj-umx"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrG-hJ-VUu">
                                         <rect key="frame" x="108" y="4.5" width="119" height="21.5"/>
@@ -628,6 +669,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickOnNext:" destination="Pxj-qH-HM1" eventType="touchUpInside" id="15N-Sh-4MR"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did’nt receive the code ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSV-1U-jDM">
                                 <rect key="frame" x="20" y="419" width="335" height="18"/>
@@ -786,6 +830,14 @@
                             <constraint firstItem="laP-LJ-zg3" firstAttribute="leading" secondItem="XTS-Tm-waZ" secondAttribute="leading" constant="40" id="ylb-yK-MJB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outletCollection property="txtOTP" destination="Uq2-3R-vdl" collectionClass="NSMutableArray" id="FJX-HW-UG4"/>
+                        <outletCollection property="txtOTP" destination="0ZY-1d-hgI" collectionClass="NSMutableArray" id="eEV-bA-cxN"/>
+                        <outletCollection property="txtOTP" destination="IeU-QI-xa3" collectionClass="NSMutableArray" id="1MY-fn-bx2"/>
+                        <outletCollection property="txtOTP" destination="Kpo-Jb-TM5" collectionClass="NSMutableArray" id="hSi-pw-QZU"/>
+                        <outletCollection property="txtOTP" destination="ZWK-On-l0F" collectionClass="NSMutableArray" id="8fi-Zk-xvK"/>
+                        <outletCollection property="txtOTP" destination="whO-Pj-VvW" collectionClass="NSMutableArray" id="Sx9-xt-Kqu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGO-OC-TYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

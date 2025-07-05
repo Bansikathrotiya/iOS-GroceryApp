@@ -58,6 +58,10 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         FeaturedProducts(imgfeaturedProducts: "Broccoli", price: "$3.00", product: "Fresh Broccoli", quantity: "1 kg")
     ]
     
+    var posterImages: [String] = ["Poster1", "Poster2", "Poster3"]
+    var currentPosterIndex = 0
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -72,9 +76,48 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         self.featuredProductsCollectionview.register(UINib(nibName: "featuredProductsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "featuredProductsCollectionViewCell")
         self.featuredProductsCollectionview.isScrollEnabled = false
         
+        imgPoster.isUserInteractionEnabled = true // important for gesture support
+
+            imgPoster.image = UIImage(named: posterImages[currentPosterIndex])
+            page_Control.numberOfPages = posterImages.count
+            page_Control.currentPage = currentPosterIndex
+            
+            addSwipeGestures()
+            page_Control.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
+
+    }
+    
+    func addSwipeGestures() {
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeLeft.direction = .left
+        imgPoster.addGestureRecognizer(swipeLeft)
+
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeRight.direction = .right
+        imgPoster.addGestureRecognizer(swipeRight)
+    }
+     
+    func updatePosterImage() {
+        imgPoster.image = UIImage(named: posterImages[currentPosterIndex])
+        page_Control.currentPage = currentPosterIndex
     }
 
-    
+
+    @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .left {
+            currentPosterIndex = (currentPosterIndex + 1) % posterImages.count
+        } else if gesture.direction == .right {
+            currentPosterIndex = (currentPosterIndex - 1 + posterImages.count) % posterImages.count
+        }
+        
+        updatePosterImage()
+    }
+
+    @objc func pageControlTapped(_ sender: UIPageControl) {
+        currentPosterIndex = sender.currentPage
+        updatePosterImage()
+    }
+
 
     @IBAction func clickOnCategories(_ sender: Any) {
         let catVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CategoryVC")

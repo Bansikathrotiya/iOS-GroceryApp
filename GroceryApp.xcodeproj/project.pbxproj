@@ -24,6 +24,9 @@
 		18781C5C2E18E68900EDDB02 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18781C5B2E18E68900EDDB02 /* Home.storyboard */; };
 		18781C5F2E18E6B300EDDB02 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18781C5E2E18E6B300EDDB02 /* CategoryVC.swift */; };
 		18781C612E18F25400EDDB02 /* VegetablesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18781C602E18F25400EDDB02 /* VegetablesVC.swift */; };
+		1888BF9A2E190C3D00E999F2 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1888BF992E190C3D00E999F2 /* Account.storyboard */; };
+		1888BF9D2E19295000E999F2 /* AboutmeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888BF9C2E19295000E999F2 /* AboutmeVC.swift */; };
+		1888BF9F2E19295D00E999F2 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888BF9E2E19295D00E999F2 /* NotificationVC.swift */; };
 		1892D8192E17E9370017C6F6 /* FavouriteTableviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1892D8182E17E9370017C6F6 /* FavouriteTableviewCell.xib */; };
 		1892D81A2E17E9370017C6F6 /* FavouriteTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892D8172E17E9370017C6F6 /* FavouriteTableviewCell.swift */; };
 		1892D81D2E17EE4F0017C6F6 /* CartTableviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1892D81C2E17EE4F0017C6F6 /* CartTableviewCell.xib */; };
@@ -86,6 +89,9 @@
 		18781C5B2E18E68900EDDB02 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		18781C5E2E18E6B300EDDB02 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		18781C602E18F25400EDDB02 /* VegetablesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegetablesVC.swift; sourceTree = "<group>"; };
+		1888BF992E190C3D00E999F2 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		1888BF9C2E19295000E999F2 /* AboutmeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutmeVC.swift; sourceTree = "<group>"; };
+		1888BF9E2E19295D00E999F2 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		1892D8172E17E9370017C6F6 /* FavouriteTableviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableviewCell.swift; sourceTree = "<group>"; };
 		1892D8182E17E9370017C6F6 /* FavouriteTableviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteTableviewCell.xib; sourceTree = "<group>"; };
 		1892D81B2E17EE4F0017C6F6 /* CartTableviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartTableviewCell.swift; path = GroceryApp/System/VC/TabBar/XIB/TableView/CartTableviewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -209,6 +215,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		1888BF9B2E19293C00E999F2 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				1888BF9C2E19295000E999F2 /* AboutmeVC.swift */,
+				1888BF9E2E19295D00E999F2 /* NotificationVC.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		18C843542E164E3F0065863B = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +302,7 @@
 				186E01592E1787A100752E13 /* Login.storyboard */,
 				186E01642E17976B00752E13 /* TabBar.storyboard */,
 				18781C5B2E18E68900EDDB02 /* Home.storyboard */,
+				1888BF992E190C3D00E999F2 /* Account.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -294,11 +310,12 @@
 		18C843AE2E164E7E0065863B /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				18781C5D2E18E69600EDDB02 /* Home */,
-				186E01662E17986900752E13 /* TabBar */,
-				186E015B2E1787CB00752E13 /* Login */,
-				18C843B82E1666E50065863B /* Signup */,
 				18C843B12E1659AB0065863B /* Main */,
+				18C843B82E1666E50065863B /* Signup */,
+				186E015B2E1787CB00752E13 /* Login */,
+				186E01662E17986900752E13 /* TabBar */,
+				18781C5D2E18E69600EDDB02 /* Home */,
+				1888BF9B2E19293C00E999F2 /* Account */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -462,6 +479,7 @@
 				18C843A02E164E4D0065863B /* LaunchScreen.storyboard in Resources */,
 				186E016D2E17AC2B00752E13 /* CategoriesCollectionViewCell.xib in Resources */,
 				18C843B72E1666A00065863B /* Signup.storyboard in Resources */,
+				1888BF9A2E190C3D00E999F2 /* Account.storyboard in Resources */,
 				186E01652E17976B00752E13 /* TabBar.storyboard in Resources */,
 				18C843A12E164E4D0065863B /* Main.storyboard in Resources */,
 			);
@@ -576,7 +594,9 @@
 				1892D81A2E17E9370017C6F6 /* FavouriteTableviewCell.swift in Sources */,
 				186E01752E17E62B00752E13 /* AccountVC.swift in Sources */,
 				186E016A2E17A8F700752E13 /* HomeVC.swift in Sources */,
+				1888BF9F2E19295D00E999F2 /* NotificationVC.swift in Sources */,
 				186E01632E17967100752E13 /* OtpVC.swift in Sources */,
+				1888BF9D2E19295000E999F2 /* AboutmeVC.swift in Sources */,
 				18C843B32E1659DC0065863B /* OnBoradingVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

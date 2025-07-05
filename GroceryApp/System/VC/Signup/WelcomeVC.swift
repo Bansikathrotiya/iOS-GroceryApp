@@ -15,15 +15,18 @@ class WelcomeVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func clickOnBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
-    */
-
+    
+    @IBAction func clickOnSignup(_ sender: Any) {
+        let signupVC = UIStoryboard(name: "Signup", bundle: nil).instantiateViewController(withIdentifier: "SignupVC")
+        self.navigationController?.pushViewController(signupVC, animated: true)
+    }
+    
+    @IBAction func clickOnLogin(_ sender: Any) {
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
+        self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+    
 }
