@@ -12,18 +12,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoriesCollectionViewCell" customModule="GroceryApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="91" height="82"/>
+            <rect key="frame" x="0.0" y="0.0" width="91" height="124"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="91" height="82"/>
+                <rect key="frame" x="0.0" y="0.0" width="91" height="124"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMh-oe-8el">
-                        <rect key="frame" x="0.0" y="0.0" width="91" height="82"/>
+                        <rect key="frame" x="0.0" y="0.0" width="91" height="124"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPI-p8-dF2">
-                        <rect key="frame" x="32" y="67" width="27" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPI-p8-dF2">
+                        <rect key="frame" x="32" y="67" width="27" height="47"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                         <color key="textColor" name="Color_868889"/>
                         <nil key="highlightedColor"/>
@@ -40,20 +40,21 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="tMh-oe-8el" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0HP-XT-uxz"/>
-                <constraint firstItem="DPI-p8-dF2" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="88z-w9-YVI"/>
                 <constraint firstItem="59V-R8-60b" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="DHa-qc-b2y"/>
                 <constraint firstAttribute="bottom" secondItem="tMh-oe-8el" secondAttribute="bottom" id="IPU-Yd-S87"/>
                 <constraint firstItem="59V-R8-60b" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="NZD-DN-BVQ"/>
                 <constraint firstItem="tMh-oe-8el" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Xca-5g-UXK"/>
+                <constraint firstItem="DPI-p8-dF2" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="fyi-CX-QPO"/>
                 <constraint firstAttribute="trailing" secondItem="tMh-oe-8el" secondAttribute="trailing" id="kle-bp-nYN"/>
                 <constraint firstItem="DPI-p8-dF2" firstAttribute="top" secondItem="59V-R8-60b" secondAttribute="bottom" constant="5" id="nex-Fx-ahQ"/>
+                <constraint firstAttribute="bottom" secondItem="DPI-p8-dF2" secondAttribute="bottom" constant="10" id="xaj-H5-iia"/>
             </constraints>
-            <size key="customSize" width="91" height="82"/>
+            <size key="customSize" width="91" height="124"/>
             <connections>
                 <outlet property="imgCategories" destination="59V-R8-60b" id="mxu-N3-cId"/>
                 <outlet property="lblCategories" destination="DPI-p8-dF2" id="nJ9-5C-Edg"/>
             </connections>
-            <point key="canvasLocation" x="170.22900763358777" y="30.985915492957748"/>
+            <point key="canvasLocation" x="170.22900763358777" y="45.774647887323944"/>
         </collectionViewCell>
     </objects>
     <resources>

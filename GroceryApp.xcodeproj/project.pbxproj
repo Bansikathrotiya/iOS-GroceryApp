@@ -21,6 +21,9 @@
 		186E01732E17B27900752E13 /* featuredProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E01702E17B27900752E13 /* featuredProductsCollectionViewCell.swift */; };
 		186E01752E17E62B00752E13 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E01742E17E62B00752E13 /* AccountVC.swift */; };
 		186E01792E17E87C00752E13 /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E01782E17E87C00752E13 /* FavouriteVC.swift */; };
+		18781C5C2E18E68900EDDB02 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18781C5B2E18E68900EDDB02 /* Home.storyboard */; };
+		18781C5F2E18E6B300EDDB02 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18781C5E2E18E6B300EDDB02 /* CategoryVC.swift */; };
+		18781C612E18F25400EDDB02 /* VegetablesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18781C602E18F25400EDDB02 /* VegetablesVC.swift */; };
 		1892D8192E17E9370017C6F6 /* FavouriteTableviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1892D8182E17E9370017C6F6 /* FavouriteTableviewCell.xib */; };
 		1892D81A2E17E9370017C6F6 /* FavouriteTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892D8172E17E9370017C6F6 /* FavouriteTableviewCell.swift */; };
 		1892D81D2E17EE4F0017C6F6 /* CartTableviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1892D81C2E17EE4F0017C6F6 /* CartTableviewCell.xib */; };
@@ -80,6 +83,9 @@
 		186E01712E17B27900752E13 /* featuredProductsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = featuredProductsCollectionViewCell.xib; sourceTree = "<group>"; };
 		186E01742E17E62B00752E13 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountVC.swift; path = GroceryApp/System/VC/TabBar/AccountVC.swift; sourceTree = SOURCE_ROOT; };
 		186E01782E17E87C00752E13 /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
+		18781C5B2E18E68900EDDB02 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		18781C5E2E18E6B300EDDB02 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		18781C602E18F25400EDDB02 /* VegetablesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegetablesVC.swift; sourceTree = "<group>"; };
 		1892D8172E17E9370017C6F6 /* FavouriteTableviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableviewCell.swift; sourceTree = "<group>"; };
 		1892D8182E17E9370017C6F6 /* FavouriteTableviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteTableviewCell.xib; sourceTree = "<group>"; };
 		1892D81B2E17EE4F0017C6F6 /* CartTableviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartTableviewCell.swift; path = GroceryApp/System/VC/TabBar/XIB/TableView/CartTableviewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -194,6 +200,15 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		18781C5D2E18E69600EDDB02 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				18781C5E2E18E6B300EDDB02 /* CategoryVC.swift */,
+				18781C602E18F25400EDDB02 /* VegetablesVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		18C843542E164E3F0065863B = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +286,7 @@
 				18C843B62E1666A00065863B /* Signup.storyboard */,
 				186E01592E1787A100752E13 /* Login.storyboard */,
 				186E01642E17976B00752E13 /* TabBar.storyboard */,
+				18781C5B2E18E68900EDDB02 /* Home.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -278,6 +294,7 @@
 		18C843AE2E164E7E0065863B /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				18781C5D2E18E69600EDDB02 /* Home */,
 				186E01662E17986900752E13 /* TabBar */,
 				186E015B2E1787CB00752E13 /* Login */,
 				18C843B82E1666E50065863B /* Signup */,
@@ -438,6 +455,7 @@
 				18C8439E2E164E4D0065863B /* Assets.xcassets in Resources */,
 				186E01722E17B27900752E13 /* featuredProductsCollectionViewCell.xib in Resources */,
 				18C843B02E1654C50065863B /* Color.xcassets in Resources */,
+				18781C5C2E18E68900EDDB02 /* Home.storyboard in Resources */,
 				1892D81D2E17EE4F0017C6F6 /* CartTableviewCell.xib in Resources */,
 				1892D8192E17E9370017C6F6 /* FavouriteTableviewCell.xib in Resources */,
 				186E015A2E1787A100752E13 /* Login.storyboard in Resources */,
@@ -549,7 +567,9 @@
 				18C8439D2E164E4D0065863B /* SplashVC.swift in Sources */,
 				186E016E2E17AC2B00752E13 /* CategoriesCollectionViewCell.swift in Sources */,
 				186E01612E178FC300752E13 /* VerifyNumberVC.swift in Sources */,
+				18781C5F2E18E6B300EDDB02 /* CategoryVC.swift in Sources */,
 				186E015F2E178C9A00752E13 /* ForgotPasswordVC.swift in Sources */,
+				18781C612E18F25400EDDB02 /* VegetablesVC.swift in Sources */,
 				186E01792E17E87C00752E13 /* FavouriteVC.swift in Sources */,
 				1892D81E2E17EE4F0017C6F6 /* CartTableviewCell.swift in Sources */,
 				186E01682E1798A100752E13 /* TabBarVC.swift in Sources */,

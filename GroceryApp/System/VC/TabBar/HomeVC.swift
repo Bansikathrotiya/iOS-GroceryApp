@@ -70,28 +70,15 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         self.featuredProductsCollectionview.delegate = self
         self.featuredProductsCollectionview.dataSource = self
         self.featuredProductsCollectionview.register(UINib(nibName: "featuredProductsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "featuredProductsCollectionViewCell")
+        self.featuredProductsCollectionview.isScrollEnabled = false
         
-        
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        let itemsPerRow: CGFloat = 2
-        let spacing: CGFloat = 10
-        let width = featuredProductsCollectionview.frame.width
-        let itemHeight = (width / itemsPerRow) - 5
-        let rows = ceil(CGFloat(feaInfo.count) / itemsPerRow)
-        let totalHeight = (rows * itemHeight) + ((rows - 1) * spacing)
-
-        featuredCollectionHeight.constant = totalHeight
-        view.layoutIfNeeded()
     }
 
     
 
     @IBAction func clickOnCategories(_ sender: Any) {
-        
+        let catVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CategoryVC")
+        self.navigationController?.pushViewController(catVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -122,12 +109,18 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         if collectionView == self.categoriesCollectionview {
             return CGSize(width: (self.categoriesCollectionview.frame.width / 3.5) - 5, height: (self.categoriesCollectionview.frame.width / 3.5) - 5)
         } else {
-            return CGSize(width: (self.featuredProductsCollectionview.frame.width / 2) - 5, height: (self.featuredProductsCollectionview.frame.width / 2) - 5)
+            let itemsPerRow: CGFloat = 2
+            let spacing: CGFloat = 10
+            let totalSpacing = spacing * (itemsPerRow - 1)
+            let width = (featuredProductsCollectionview.frame.width - totalSpacing) / itemsPerRow
+            let height = width + 70  // enough for image, price, name, quantity, and button
+            return CGSize(width: width, height: height)
         }
     }
     
     @IBAction func clickOnFeaturedProducts(_ sender: Any) {
-        
+        let vegVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "VegetablesVC")
+        self.navigationController?.pushViewController(vegVC, animated: true)
     }
     
 }
