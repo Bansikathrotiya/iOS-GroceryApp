@@ -81,15 +81,6 @@ class HomeVC: UIViewController {
         let vegVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "VegetablesVC")
         self.navigationController?.pushViewController(vegVC, animated: true)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.categoriesCollectionview {
-            return self.catInfo.count
-        } else {
-            return self.feaInfo.count
-        }
-    }
-    
    
     
 }
@@ -106,6 +97,14 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         self.featuredProductsCollectionview.dataSource = self
         self.featuredProductsCollectionview.register(UINib(nibName: "featuredProductsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "featuredProductsCollectionViewCell")
         self.featuredProductsCollectionview.isScrollEnabled = false
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == self.categoriesCollectionview {
+            return self.catInfo.count
+        } else {
+            return self.feaInfo.count
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

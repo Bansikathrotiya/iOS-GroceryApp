@@ -58,6 +58,39 @@
                                 <color key="textColor" name="Color_868889"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bP4-fN-2lG">
+                                <rect key="frame" x="0.0" y="196" width="157" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQB-yf-BBF">
+                                        <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="50"/>
+                                        <color key="tintColor" name="Color_6CC51D"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="minus" catalog="system"/>
+                                        <connections>
+                                            <action selector="clickOnMinus:" destination="gTV-IL-0wX" eventType="touchUpInside" id="qNu-98-BZe"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXx-LC-0BB">
+                                        <rect key="frame" x="52.333333333333329" y="0.0" width="52.333333333333329" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwI-PZ-Wi8">
+                                        <rect key="frame" x="104.66666666666667" y="0.0" width="52.333333333333329" height="50"/>
+                                        <color key="tintColor" name="Color_6CC51D"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="plus" catalog="system"/>
+                                        <connections>
+                                            <action selector="clickOnPlus:" destination="gTV-IL-0wX" eventType="touchUpInside" id="MGo-cW-Kxa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="Color_EBEBEB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6bt-Ls-EW3"/>
+                                </constraints>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLL-TA-zNj">
                                 <rect key="frame" x="0.0" y="196" width="157" height="50"/>
                                 <color key="backgroundColor" name="Color_EBEBEB"/>
@@ -90,9 +123,12 @@
                             <constraint firstAttribute="trailing" secondItem="DdH-QG-Qpe" secondAttribute="trailing" constant="20" id="Qys-k7-wcW"/>
                             <constraint firstAttribute="trailing" secondItem="kLL-TA-zNj" secondAttribute="trailing" id="Rhd-Z3-waU"/>
                             <constraint firstItem="kLL-TA-zNj" firstAttribute="top" relation="lessThanOrEqual" secondItem="HNP-Ko-WtV" secondAttribute="bottom" constant="20" id="U4W-KT-0SK"/>
+                            <constraint firstAttribute="trailing" secondItem="bP4-fN-2lG" secondAttribute="trailing" id="XFM-7M-eAI"/>
                             <constraint firstAttribute="trailing" secondItem="iyV-W3-wei" secondAttribute="trailing" constant="20" id="ahD-KZ-9hZ"/>
+                            <constraint firstAttribute="bottom" secondItem="bP4-fN-2lG" secondAttribute="bottom" id="jrm-CF-0gM"/>
                             <constraint firstItem="DdH-QG-Qpe" firstAttribute="top" secondItem="iyV-W3-wei" secondAttribute="bottom" constant="3" id="kOg-6O-Yp8"/>
                             <constraint firstAttribute="trailing" secondItem="HNP-Ko-WtV" secondAttribute="trailing" constant="20" id="mPI-zJ-0fN"/>
+                            <constraint firstItem="bP4-fN-2lG" firstAttribute="leading" secondItem="0YZ-lN-QId" secondAttribute="leading" id="tla-rW-Iw7"/>
                             <constraint firstAttribute="trailing" secondItem="JNI-kE-9nz" secondAttribute="trailing" constant="7" id="w3P-yR-oaB"/>
                             <constraint firstItem="E2q-Uy-PvK" firstAttribute="leading" secondItem="0YZ-lN-QId" secondAttribute="leading" constant="20" id="xLE-5R-m6R"/>
                         </constraints>
@@ -110,10 +146,14 @@
             <connections>
                 <outlet property="btnCart" destination="kLL-TA-zNj" id="g3g-RV-tIc"/>
                 <outlet property="btnFavourite" destination="JNI-kE-9nz" id="NzD-Uy-xC9"/>
+                <outlet property="btnMinus" destination="BQB-yf-BBF" id="FL7-A5-2r3"/>
+                <outlet property="btnPlus" destination="nwI-PZ-Wi8" id="MuR-5P-AhJ"/>
                 <outlet property="imgFeaturedProducts" destination="E2q-Uy-PvK" id="ODX-D3-ebt"/>
+                <outlet property="lblCartCount" destination="GXx-LC-0BB" id="Qtb-jb-Wzl"/>
                 <outlet property="lblPrice" destination="iyV-W3-wei" id="tsk-Ss-tjG"/>
                 <outlet property="lblProductName" destination="DdH-QG-Qpe" id="GXa-V9-h8o"/>
                 <outlet property="lblQuantity" destination="HNP-Ko-WtV" id="kRQ-de-kta"/>
+                <outlet property="stackStepper" destination="bP4-fN-2lG" id="Xvg-vt-h28"/>
             </connections>
             <point key="canvasLocation" x="57.251908396946561" y="88.732394366197184"/>
         </collectionViewCell>
@@ -121,6 +161,8 @@
     <resources>
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="minus" catalog="system" width="128" height="26"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="Color_000000">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
