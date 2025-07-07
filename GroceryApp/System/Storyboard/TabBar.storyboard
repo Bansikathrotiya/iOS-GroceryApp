@@ -587,6 +587,9 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="lblSignout" destination="Tgy-At-K6v" id="txy-bq-RNd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uze-nl-NTr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
