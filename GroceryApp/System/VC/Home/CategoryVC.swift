@@ -7,10 +7,12 @@
 
 import UIKit
 
-class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+class CategoryVC: UIViewController {
+    
+    // MARK: - Outlets
     @IBOutlet weak var catCollectionview: UICollectionView!
     
+    // MARK: - Variables
     var catInfo: [Categories] = [ // homevc -  categories structure
         Categories(imgCat: "Vegetables", titleCat: "Vegetables"),
         Categories(imgCat: "Fruits", titleCat: "Fruits"),
@@ -21,16 +23,36 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         Categories(imgCat: "Babycare", titleCat: "Babycare")
     ]
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
+        configureCollectionView()
+        
+    }
+    
+    // MARK: - Actions
+    @IBAction func clickOnFilter(_ sender: Any) {
+        
+    }
+    
+    @IBAction func clickOnBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+}
+
+// MARK: - UICollectionView
+extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func configureCollectionView() {
         self.catCollectionview.delegate = self
         self.catCollectionview.dataSource = self
-        
         self.catCollectionview.register(UINib(nibName: "CategoriesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoriesCollectionViewCell")
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,13 +69,4 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (self.catCollectionview.frame.width / 2) - 5, height: (self.catCollectionview.frame.width / 2) - 5)
     }
-
-    @IBAction func clickOnFilter(_ sender: Any) {
-        
-    }
-    
-    @IBAction func clickOnBack(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
 }

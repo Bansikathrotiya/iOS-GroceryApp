@@ -15,6 +15,10 @@ class SplashVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        setupSplashLogic()
+    }
+    
+    func setupSplashLogic() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             
             if user.bool(forKey: "IsFirstTime") {

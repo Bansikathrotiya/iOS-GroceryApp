@@ -9,6 +9,7 @@ import UIKit
 
 class VerifyNumberVC: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet weak var txtNumber: UITextField!
     @IBOutlet weak var imgCountry: UIImageView!
     @IBOutlet weak var lblCountryName: UILabel!
@@ -20,6 +21,7 @@ class VerifyNumberVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - Actions
     @IBAction func clickOnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

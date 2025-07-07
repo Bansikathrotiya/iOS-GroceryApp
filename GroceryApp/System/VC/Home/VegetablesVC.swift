@@ -7,10 +7,12 @@
 
 import UIKit
 
-class VegetablesVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class VegetablesVC: UIViewController{
 
+    // MARK: - Outlets
     @IBOutlet weak var vegCollectionview: UICollectionView!
     
+    // MARK: - Variables
     var feaInfo: [FeaturedProducts] = [ // homevc - FeaturedProducts structure
         FeaturedProducts(imgfeaturedProducts: "Peach", price: "$8.00", product: "Fresh Peach", quantity: "dozen"),
         FeaturedProducts(imgfeaturedProducts: "Avocado", price: "$7.00", product: "Avocado", quantity: "2.0 lbs"),
@@ -20,11 +22,30 @@ class VegetablesVC: UIViewController, UICollectionViewDelegate, UICollectionView
         FeaturedProducts(imgfeaturedProducts: "Broccoli", price: "$3.00", product: "Fresh Broccoli", quantity: "1 kg")
     ]
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        configureCollectionView()
+    }
+    
+    // MARK: - Actions
+    @IBAction func clickOnFilter(_ sender: Any) {
+        
+    }
+    
+    @IBAction func clickOnBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+// MARK: - UICollectionView
+extension VegetablesVC :  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func configureCollectionView() {
         self.vegCollectionview.dataSource = self
         self.vegCollectionview.delegate = self
         self.vegCollectionview.register(UINib(nibName: "featuredProductsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "featuredProductsCollectionViewCell")
@@ -50,14 +71,6 @@ class VegetablesVC: UIViewController, UICollectionViewDelegate, UICollectionView
         let width = (self.vegCollectionview.frame.width - totalSpacing) / itemsPerRow
         let height = width + 70  // enough for image, price, name, quantity, and button
         return CGSize(width: width, height: height)
-    }
-
-    @IBAction func clickOnFilter(_ sender: Any) {
-        
-    }
-    
-    @IBAction func clickOnBack(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
     }
     
 }

@@ -15,6 +15,7 @@ class AccountVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //MARK: - Actions
     @IBAction func clickOnAboutMe(_ sender: Any) {
         let aboutmeVC = UIStoryboard(name: "Account", bundle: nil).instantiateViewController(withIdentifier: "AboutmeVC")
         self.navigationController?.pushViewController(aboutmeVC, animated: true)

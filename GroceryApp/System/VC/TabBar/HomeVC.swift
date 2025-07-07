@@ -31,14 +31,16 @@ struct FeaturedProducts {
     }
 }
 
-class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class HomeVC: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet weak var imgPoster: UIImageView!
     @IBOutlet weak var page_Control: UIPageControl!
     @IBOutlet weak var categoriesCollectionview: UICollectionView!
     @IBOutlet weak var featuredProductsCollectionview: UICollectionView!
     @IBOutlet weak var featuredCollectionHeight: NSLayoutConstraint!
     
+    // MARK: - Variable
     var catInfo: [Categories] = [
         Categories(imgCat: "Vegetables", titleCat: "Vegetables"),
         Categories(imgCat: "Fruits", titleCat: "Fruits"),
@@ -48,7 +50,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         Categories(imgCat: "Household", titleCat: "Household"),
         Categories(imgCat: "Babycare", titleCat: "Babycare")
     ]
-    
     var feaInfo: [FeaturedProducts] = [
         FeaturedProducts(imgfeaturedProducts: "Peach", price: "$8.00", product: "Fresh Peach", quantity: "dozen"),
         FeaturedProducts(imgfeaturedProducts: "Avocado", price: "$7.00", product: "Avocado", quantity: "2.0 lbs"),
@@ -57,71 +58,28 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         FeaturedProducts(imgfeaturedProducts: "Pomegranate", price: "$2.09", product: "Pomegranate", quantity: "1.50 lbs"),
         FeaturedProducts(imgfeaturedProducts: "Broccoli", price: "$3.00", product: "Fresh Broccoli", quantity: "1 kg")
     ]
-    
     var posterImages: [String] = ["Poster1", "Poster2", "Poster3"]
     var currentPosterIndex = 0
 
-    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        self.categoriesCollectionview.delegate = self
-        self.categoriesCollectionview.dataSource = self
-        self.categoriesCollectionview.register(UINib(nibName: "CategoriesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoriesCollectionViewCell")
-        
-        self.featuredProductsCollectionview.delegate = self
-        self.featuredProductsCollectionview.dataSource = self
-        self.featuredProductsCollectionview.register(UINib(nibName: "featuredProductsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "featuredProductsCollectionViewCell")
-        self.featuredProductsCollectionview.isScrollEnabled = false
-        
-        imgPoster.isUserInteractionEnabled = true // important for gesture support
-
-            imgPoster.image = UIImage(named: posterImages[currentPosterIndex])
-            page_Control.numberOfPages = posterImages.count
-            page_Control.currentPage = currentPosterIndex
-            
-            addSwipeGestures()
-            page_Control.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
-
+        configureCollections()
+        configurePosterSlider()
     }
     
-    func addSwipeGestures() {
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
-        swipeLeft.direction = .left
-        imgPoster.addGestureRecognizer(swipeLeft)
-
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
-        swipeRight.direction = .right
-        imgPoster.addGestureRecognizer(swipeRight)
-    }
-     
-    func updatePosterImage() {
-        imgPoster.image = UIImage(named: posterImages[currentPosterIndex])
-        page_Control.currentPage = currentPosterIndex
-    }
-
-
-    @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
-        if gesture.direction == .left {
-            currentPosterIndex = (currentPosterIndex + 1) % posterImages.count
-        } else if gesture.direction == .right {
-            currentPosterIndex = (currentPosterIndex - 1 + posterImages.count) % posterImages.count
-        }
-        
-        updatePosterImage()
-    }
-
-    @objc func pageControlTapped(_ sender: UIPageControl) {
-        currentPosterIndex = sender.currentPage
-        updatePosterImage()
-    }
-
-
+    // MARK: - Actions
     @IBAction func clickOnCategories(_ sender: Any) {
         let catVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CategoryVC")
         self.navigationController?.pushViewController(catVC, animated: true)
+    }
+    
+    @IBAction func clickOnFeaturedProducts(_ sender: Any) {
+        let vegVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "VegetablesVC")
+        self.navigationController?.pushViewController(vegVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -132,6 +90,24 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
+   
+    
+}
+
+// MARK: - UICollectionView
+extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func configureCollections() {
+        self.categoriesCollectionview.delegate = self
+        self.categoriesCollectionview.dataSource = self
+        self.categoriesCollectionview.register(UINib(nibName: "CategoriesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoriesCollectionViewCell")
+        
+        self.featuredProductsCollectionview.delegate = self
+        self.featuredProductsCollectionview.dataSource = self
+        self.featuredProductsCollectionview.register(UINib(nibName: "featuredProductsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "featuredProductsCollectionViewCell")
+        self.featuredProductsCollectionview.isScrollEnabled = false
+    }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.categoriesCollectionview {
             let catCell = categoriesCollectionview.dequeueReusableCell(withReuseIdentifier: "CategoriesCollectionViewCell", for: indexPath) as! CategoriesCollectionViewCell
@@ -161,9 +137,50 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
-    @IBAction func clickOnFeaturedProducts(_ sender: Any) {
-        let vegVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "VegetablesVC")
-        self.navigationController?.pushViewController(vegVC, animated: true)
+}
+
+// MARK: - Poster Navigation
+extension HomeVC {
+ 
+    func configurePosterSlider() {
+        self.imgPoster.isUserInteractionEnabled = true // important for gesture support
+        self.imgPoster.image = UIImage(named: self.posterImages[self.currentPosterIndex])
+        
+        self.page_Control.numberOfPages = self.posterImages.count
+        self.page_Control.currentPage = self.currentPosterIndex
+        self.page_Control.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
+        
+        addSwipeGestures()
+    }
+    
+    func addSwipeGestures() {
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeLeft.direction = .left
+        self.imgPoster.addGestureRecognizer(swipeLeft)
+
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeRight.direction = .right
+        self.imgPoster.addGestureRecognizer(swipeRight)
+    }
+     
+    func updatePosterImage() {
+        self.imgPoster.image = UIImage(named: self.posterImages[self.currentPosterIndex])
+        self.page_Control.currentPage = self.currentPosterIndex
+    }
+
+    @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .left {
+            currentPosterIndex = (currentPosterIndex + 1) % posterImages.count
+        } else if gesture.direction == .right {
+            currentPosterIndex = (currentPosterIndex - 1 + posterImages.count) % posterImages.count
+        }
+        
+        updatePosterImage()
+    }
+
+    @objc func pageControlTapped(_ sender: UIPageControl) {
+        currentPosterIndex = sender.currentPage
+        updatePosterImage()
     }
     
 }

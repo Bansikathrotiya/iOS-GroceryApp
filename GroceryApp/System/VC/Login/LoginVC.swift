@@ -9,6 +9,7 @@ import UIKit
 
 class LoginVC: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
@@ -18,6 +19,7 @@ class LoginVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - Actions
     @IBAction func clickOnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -46,10 +48,16 @@ class LoginVC: UIViewController {
         self.navigationController?.pushViewController(signupVC, animated: true)
     }
     
+}
+
+extension LoginVC {
+    
+    // MARK: - Alert
     func showAlert(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let clickOnOk = UIAlertAction(title: "OK", style: .default)
         alert.addAction(clickOnOk)
         self.present(alert, animated: true)
     }
+    
 }

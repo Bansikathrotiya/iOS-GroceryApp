@@ -21,6 +21,7 @@ struct Introduction {
 
 class OnBoradingVC: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet weak var lblHeading: UILabel!
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var lblParagraph: UILabel!
@@ -28,6 +29,7 @@ class OnBoradingVC: UIViewController {
     @IBOutlet weak var page_Instruction: UIPageControl!
     @IBOutlet weak var paragraphTopConstraint: NSLayoutConstraint!
     
+    // MARK: - Variables
     var currentPage = 0
     var intro: [Introduction] = [
         Introduction(title: "Welcome to", paragraph: "Get fresh groceries delivered at your doorstep — easy, fast, and affordable with Big Cart.", imgArr: "Splash1"),
@@ -36,6 +38,7 @@ class OnBoradingVC: UIViewController {
         Introduction(title: "Get Discounts On All Products", paragraph: "Save more on every order — exciting deals on all grocery items.", imgArr: "Splash4")
     ]
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,6 +50,7 @@ class OnBoradingVC: UIViewController {
         updateUI()
     }
     
+    // MARK: - UI Updates
     func updateUI() {
         let data = self.intro[self.currentPage]
         self.lblHeading.text = data.title
@@ -63,6 +67,7 @@ class OnBoradingVC: UIViewController {
         
     }
 
+    // MARK: - Actions
     @IBAction func ClickOnStarted(_ sender: Any) {
         if self.currentPage < self.intro.count - 1 {
             self.currentPage += 1

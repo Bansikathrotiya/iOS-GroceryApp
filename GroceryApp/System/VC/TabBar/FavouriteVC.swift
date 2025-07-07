@@ -17,10 +17,12 @@ struct Fav {
     }
 }
 
-class FavouriteVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FavouriteVC: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet weak var tableview: UITableView!
     
+    // MARK: - Variable
     var favInfo: [Fav] = [
         Fav(imgProduct: "Peach", productName: "Fresh Peach"),
         Fav(imgProduct: "Avocado", productName: "Avocado"),
@@ -30,14 +32,23 @@ class FavouriteVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         Fav(imgProduct: "Broccoli", productName: "Fresh Broccoli")
     ]
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        configureTableView()
+    }
+
+}
+
+// MARK: - UITableView
+extension FavouriteVC : UITableViewDataSource, UITableViewDelegate {
+    
+    func configureTableView() {
         self.tableview.dataSource = self
         self.tableview.delegate = self
-        
         self.tableview.register(UINib(nibName: "FavouriteTableviewCell", bundle: nil), forCellReuseIdentifier: "FavouriteTableviewCell")
     }
     
@@ -51,5 +62,4 @@ class FavouriteVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         cell.lblFav.text = self.favInfo[indexPath.row].productName
         return cell
     }
-
 }

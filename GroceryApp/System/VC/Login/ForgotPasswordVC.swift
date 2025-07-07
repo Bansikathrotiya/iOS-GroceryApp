@@ -9,6 +9,7 @@ import UIKit
 
 class ForgotPasswordVC: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet weak var txtEmail: UITextField!
     
     override func viewDidLoad() {
@@ -17,6 +18,7 @@ class ForgotPasswordVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - Actions
     @IBAction func clickOnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

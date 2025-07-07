@@ -8,15 +8,17 @@
 import UIKit
 
 class OtpVC: UIViewController {
-
+    
+    // MARK: - Outlets
     @IBOutlet var txtOTP: [UITextField]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    // MARK: - Actions
     @IBAction func clickOnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
