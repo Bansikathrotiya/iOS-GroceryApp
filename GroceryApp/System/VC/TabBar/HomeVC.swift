@@ -38,7 +38,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var page_Control: UIPageControl!
     @IBOutlet weak var categoriesCollectionview: UICollectionView!
     @IBOutlet weak var featuredProductsCollectionview: UICollectionView!
-    @IBOutlet weak var featuredCollectionHeight: NSLayoutConstraint!
+//    @IBOutlet weak var featuredCollectionHeight: NSLayoutConstraint!x
     
     // MARK: - Variable
     var catInfo: [Categories] = [

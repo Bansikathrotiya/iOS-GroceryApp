@@ -231,27 +231,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sSF-Ue-qRn">
-                                <rect key="frame" x="137.5" y="40" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sSF-Ue-qRn">
+                                <rect key="frame" x="137.5" y="41" width="100" height="97.5"/>
+                                <color key="tintColor" name="Color_868889"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Ggb-MQ-t8R"/>
                                     <constraint firstAttribute="width" constant="100" id="pkX-a7-JDG"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27w-6g-4aH">
-                                <rect key="frame" x="166.5" y="155" width="42" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <color key="textColor" name="Color_000000"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vrg-t6-hVa">
-                                <rect key="frame" x="172.5" y="174" width="30.5" height="14.5"/>
+                                <rect key="frame" x="172.5" y="150" width="30.5" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" name="Color_868889"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ubq-Sa-HyS">
-                                <rect key="frame" x="20" y="208.5" width="335" height="380"/>
+                                <rect key="frame" x="20" y="184.5" width="335" height="380"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5H-B5-dfi">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
@@ -561,13 +556,11 @@
                             <constraint firstItem="ubq-Sa-HyS" firstAttribute="top" secondItem="Vrg-t6-hVa" secondAttribute="bottom" constant="20" id="3qr-sx-4tx"/>
                             <constraint firstItem="sSF-Ue-qRn" firstAttribute="centerX" secondItem="5tH-s2-qEp" secondAttribute="centerX" id="6ag-01-weB"/>
                             <constraint firstItem="mvp-ys-GcM" firstAttribute="trailing" secondItem="ubq-Sa-HyS" secondAttribute="trailing" constant="20" id="D6S-Qm-d3r"/>
-                            <constraint firstItem="Vrg-t6-hVa" firstAttribute="top" secondItem="27w-6g-4aH" secondAttribute="bottom" constant="1" id="Dco-tl-xVh"/>
                             <constraint firstItem="ubq-Sa-HyS" firstAttribute="leading" secondItem="5tH-s2-qEp" secondAttribute="leading" constant="20" id="Jvj-af-E6i"/>
                             <constraint firstItem="sSF-Ue-qRn" firstAttribute="top" secondItem="mvp-ys-GcM" secondAttribute="top" constant="20" id="PWK-l3-sPe"/>
-                            <constraint firstItem="27w-6g-4aH" firstAttribute="centerX" secondItem="5tH-s2-qEp" secondAttribute="centerX" id="ZY2-Ee-YIT"/>
+                            <constraint firstItem="Vrg-t6-hVa" firstAttribute="top" secondItem="sSF-Ue-qRn" secondAttribute="bottom" constant="10" id="c1e-TQ-sD9"/>
                             <constraint firstAttribute="trailing" secondItem="ubq-Sa-HyS" secondAttribute="trailing" constant="20" id="dZQ-iy-ofi"/>
                             <constraint firstItem="Vrg-t6-hVa" firstAttribute="centerX" secondItem="5tH-s2-qEp" secondAttribute="centerX" id="ejN-NG-YBM"/>
-                            <constraint firstItem="27w-6g-4aH" firstAttribute="top" secondItem="sSF-Ue-qRn" secondAttribute="bottom" constant="15" id="n1N-ii-j2s"/>
                             <constraint firstItem="ubq-Sa-HyS" firstAttribute="leading" secondItem="mvp-ys-GcM" secondAttribute="leading" constant="20" id="rQR-RE-7FX"/>
                         </constraints>
                     </view>
@@ -588,6 +581,8 @@
                         </imageReference>
                     </tabBarItem>
                     <connections>
+                        <outlet property="imgProfile" destination="sSF-Ue-qRn" id="9Hd-IE-Z5w"/>
+                        <outlet property="lblEmail" destination="Vrg-t6-hVa" id="Wxy-3Y-62b"/>
                         <outlet property="lblSignout" destination="Tgy-At-K6v" id="txy-bq-RNd"/>
                     </connections>
                 </viewController>
@@ -754,6 +749,7 @@ a few minutes.</string>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="location" catalog="system" width="128" height="119"/>
+        <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
         <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>

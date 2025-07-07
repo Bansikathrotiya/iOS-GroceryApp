@@ -7,20 +7,45 @@
 
 import UIKit
 
-class AccountVC: UIViewController {
+class AccountVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     //MARK: - Outlets
     @IBOutlet weak var lblSignout: UILabel!
+    @IBOutlet weak var imgProfile: UIImageView!
+    @IBOutlet weak var lblEmail: UILabel!
+    
+    //MARK: - Variables
+    var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(showSignOut))
+        let signoutTap = UITapGestureRecognizer(target: self, action: #selector(showSignOut))
         self.lblSignout.isUserInteractionEnabled = true
-        self.lblSignout.addGestureRecognizer(tap)
+        self.lblSignout.addGestureRecognizer(signoutTap)
         
+        let imgTap = UITapGestureRecognizer(target: self, action: #selector(selectProfileImage))
+        self.imgProfile.isUserInteractionEnabled = true
+        self.imgProfile.addGestureRecognizer(imgTap)
+    }
+    
+    //MARK: - ImagePicker
+    @objc func selectProfileImage() {
+        self.imagePicker.sourceType = .photoLibrary
+        self.imagePicker.delegate = self
+        self.imagePicker.allowsEditing = true
+        self.present(self.imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.editedImage] ?? info[.originalImage] {
+            if let imgData = image as? UIImage {
+                self.imgProfile.image = imgData
+                picker.dismiss(animated: true)
+            }
+        }
     }
     
     //MARK: - Sign Out Confirmation
