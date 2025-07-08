@@ -9,12 +9,12 @@ import UIKit
 
 class AccountVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
-    //MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var lblSignout: UILabel!
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var lblEmail: UILabel!
     
-    //MARK: - Variables
+    // MARK: - Variables
     var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -31,7 +31,7 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         self.imgProfile.addGestureRecognizer(imgTap)
     }
     
-    //MARK: - ImagePicker
+    // MARK: - ImagePicker
     @objc func selectProfileImage() {
         self.imagePicker.sourceType = .photoLibrary
         self.imagePicker.delegate = self
@@ -48,7 +48,7 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         }
     }
     
-    //MARK: - Sign Out Confirmation
+    // MARK: - Sign Out Confirmation
     @objc func showSignOut() {
         let alert = UIAlertController(title: "Sign Out", message: "Are you sure you want to sign out?", preferredStyle: .alert)
         let clickOnCancel = UIAlertAction(title: "Cancel", style: .cancel)
@@ -61,16 +61,20 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         present(alert, animated: true)
     }
     
-    //MARK: - Actions
+    // MARK: - Actions
     @IBAction func clickOnAboutMe(_ sender: Any) {
-        let aboutmeVC = UIStoryboard(name: "Account", bundle: nil).instantiateViewController(withIdentifier: "AboutmeVC")
+        let aboutmeVC = UIStoryboard(name: "Account", bundle: nil).instantiateViewController(withIdentifier: "AboutmeVC") as! AboutmeVC
         self.navigationController?.pushViewController(aboutmeVC, animated: true)
     }
     
     
     @IBAction func clickOnNotification(_ sender: Any) {
-        let notificationVC = UIStoryboard(name: "Account", bundle: nil).instantiateViewController(withIdentifier: "NotificationVC")
+        let notificationVC = UIStoryboard(name: "Account", bundle: nil).instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
         self.navigationController?.pushViewController(notificationVC, animated: true)
     }
     
+    @IBAction func clickOnAddress(_ sender: Any) {
+        let addressVC = UIStoryboard(name: "Account", bundle: nil).instantiateViewController(withIdentifier: "MyAddressVC") as! MyAddressVC
+        self.navigationController?.pushViewController(addressVC, animated: true)
+    }
 }

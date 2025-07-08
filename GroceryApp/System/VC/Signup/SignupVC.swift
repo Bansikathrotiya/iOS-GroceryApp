@@ -43,7 +43,7 @@ class SignupVC: UIViewController {
     }
     
     @IBAction func clickOnLogin(_ sender: Any) {
-        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
     

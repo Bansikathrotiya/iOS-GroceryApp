@@ -27,7 +27,7 @@ class VerifyNumberVC: UIViewController {
     }
     
     @IBAction func clickOnNext(_ sender: Any) {
-        let otpVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "OtpVC")
+        let otpVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
         self.navigationController?.pushViewController(otpVC, animated: true)
     }
     

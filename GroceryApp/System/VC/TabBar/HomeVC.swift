@@ -31,14 +31,14 @@ struct FeaturedProducts {
     }
 }
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, UISearchBarDelegate {
 
     // MARK: - Outlets
     @IBOutlet weak var imgPoster: UIImageView!
     @IBOutlet weak var page_Control: UIPageControl!
     @IBOutlet weak var categoriesCollectionview: UICollectionView!
     @IBOutlet weak var featuredProductsCollectionview: UICollectionView!
-//    @IBOutlet weak var featuredCollectionHeight: NSLayoutConstraint!x
+    @IBOutlet weak var searchbar: UISearchBar!
     
     // MARK: - Variable
     var catInfo: [Categories] = [
@@ -60,6 +60,8 @@ class HomeVC: UIViewController {
     ]
     var posterImages: [String] = ["Poster1", "Poster2", "Poster3"]
     var currentPosterIndex = 0
+    var filteredFeaInfo: [FeaturedProducts] = []
+    var isSearching = false
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -69,20 +71,34 @@ class HomeVC: UIViewController {
         
         configureCollections()
         configurePosterSlider()
+        
+        self.searchbar.delegate = self
+        self.filteredFeaInfo = self.feaInfo // initially show all
+    }
+    
+    // MARK: - SearchBar
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            self.isSearching = false
+            self.filteredFeaInfo = self.feaInfo
+        } else {
+            self.isSearching = true
+            self.filteredFeaInfo = feaInfo.filter{$0.product.lowercased().contains(searchText.lowercased())}
+        }
+        self.featuredProductsCollectionview.reloadData()
     }
     
     // MARK: - Actions
     @IBAction func clickOnCategories(_ sender: Any) {
-        let catVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CategoryVC")
+        let catVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CategoryVC") as! CategoryVC
         self.navigationController?.pushViewController(catVC, animated: true)
     }
     
     @IBAction func clickOnFeaturedProducts(_ sender: Any) {
-        let vegVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "VegetablesVC")
+        let vegVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "VegetablesVC") as! VegetablesVC
         self.navigationController?.pushViewController(vegVC, animated: true)
     }
    
-    
 }
 
 // MARK: - UICollectionView
@@ -103,9 +119,9 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         if collectionView == self.categoriesCollectionview {
             return self.catInfo.count
         } else {
-            return self.feaInfo.count
+            return self.isSearching ? self.filteredFeaInfo.count : self.feaInfo.count
         }
-    }
+    }   
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.categoriesCollectionview {
@@ -115,10 +131,11 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             return catCell
         } else {
             let feaCell = featuredProductsCollectionview.dequeueReusableCell(withReuseIdentifier: "featuredProductsCollectionViewCell", for: indexPath) as! featuredProductsCollectionViewCell
-            feaCell.imgFeaturedProducts.image = UIImage(named: self.feaInfo[indexPath.row].imgfeaturedProducts)
-            feaCell.lblPrice.text = self.feaInfo[indexPath.row].price
-            feaCell.lblProductName.text = self.feaInfo[indexPath.row].product
-            feaCell.lblQuantity.text = self.feaInfo[indexPath.row].quantity
+            let product = self.isSearching ? self.filteredFeaInfo[indexPath.row] : self.feaInfo[indexPath.row]
+            feaCell.imgFeaturedProducts.image = UIImage(named: product.imgfeaturedProducts)
+            feaCell.lblPrice.text = product.price
+            feaCell.lblProductName.text = product.product
+            feaCell.lblQuantity.text = product.quantity
             return feaCell
         }
     }

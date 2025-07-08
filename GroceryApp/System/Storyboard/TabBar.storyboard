@@ -217,6 +217,7 @@
                         <outlet property="featuredProductsCollectionview" destination="spz-YJ-enM" id="65K-21-Qi4"/>
                         <outlet property="imgPoster" destination="cff-g4-YNU" id="yXa-dz-OAk"/>
                         <outlet property="page_Control" destination="mX7-mp-zgw" id="Hei-wA-2ji"/>
+                        <outlet property="searchbar" destination="UMb-SW-twu" id="QBi-Im-CG5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -384,6 +385,9 @@
                                                 <color key="tintColor" name="Color_868889"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="chevron.right" catalog="system"/>
+                                                <connections>
+                                                    <action selector="clickOnAddress:" destination="XlF-F9-f4v" eventType="touchUpInside" id="Hgt-fR-mcd"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="location" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MZj-ws-T8P">
                                                 <rect key="frame" x="0.0" y="3.5" width="25" height="23.5"/>

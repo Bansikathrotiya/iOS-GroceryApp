@@ -21,12 +21,12 @@ class WelcomeVC: UIViewController {
     }
     
     @IBAction func clickOnSignup(_ sender: Any) {
-        let signupVC = UIStoryboard(name: "Signup", bundle: nil).instantiateViewController(withIdentifier: "SignupVC")
+        let signupVC = UIStoryboard(name: "Signup", bundle: nil).instantiateViewController(withIdentifier: "SignupVC") as! SignupVC
         self.navigationController?.pushViewController(signupVC, animated: true)
     }
     
     @IBAction func clickOnLogin(_ sender: Any) {
-        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
     

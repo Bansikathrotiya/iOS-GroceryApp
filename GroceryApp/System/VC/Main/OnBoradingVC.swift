@@ -73,7 +73,7 @@ class OnBoradingVC: UIViewController {
             self.currentPage += 1
             updateUI()
         }  else {
-            let welcomeVC = UIStoryboard(name: "Signup", bundle: nil).instantiateViewController(identifier: "WelcomeVC")
+            let welcomeVC = UIStoryboard(name: "Signup", bundle: nil).instantiateViewController(identifier: "WelcomeVC") as! WelcomeVC
             self.navigationController?.pushViewController(welcomeVC, animated: true)
         }
     }

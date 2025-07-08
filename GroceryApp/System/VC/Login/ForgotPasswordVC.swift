@@ -24,7 +24,7 @@ class ForgotPasswordVC: UIViewController {
     }
     
     @IBAction func clickOnSendLink(_ sender: Any) {
-        let verifynumberVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "VerifyNumberVC")
+        let verifynumberVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "VerifyNumberVC") as! VerifyNumberVC
         self.navigationController?.pushViewController(verifynumberVC, animated: true)
     }
     

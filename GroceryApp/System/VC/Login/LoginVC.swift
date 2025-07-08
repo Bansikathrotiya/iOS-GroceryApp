@@ -25,7 +25,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func clickOnForgotPassword(_ sender: Any) {
-        let forgotPasswordVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordVC")
+        let forgotPasswordVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordVC") as! ForgotPasswordVC
         self.navigationController?.pushViewController(forgotPasswordVC, animated: true)
     }
     
@@ -38,13 +38,13 @@ class LoginVC: UIViewController {
         } else if password.count < 8 {
             showAlert(title: "Weak Password", message: "Password must be at least 8 characters.")
         } else if password == "12341234" {
-            let tabbarVC = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC")
+            let tabbarVC = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC") as! TabBarVC
             self.navigationController?.pushViewController(tabbarVC, animated: true)
         }
     }
     
     @IBAction func clickOnSignup(_ sender: Any) {
-        let signupVC = UIStoryboard(name: "Signup", bundle: nil).instantiateViewController(withIdentifier: "SignupVC")
+        let signupVC = UIStoryboard(name: "Signup", bundle: nil).instantiateViewController(withIdentifier: "SignupVC") as! SignupVC
         self.navigationController?.pushViewController(signupVC, animated: true)
     }
     

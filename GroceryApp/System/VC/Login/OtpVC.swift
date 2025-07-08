@@ -24,7 +24,7 @@ class OtpVC: UIViewController {
     }
     
     @IBAction func clickOnNext(_ sender: Any) {
-        let tabbarVC = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC")
+        let tabbarVC = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC") as! TabBarVC
         self.navigationController?.pushViewController(tabbarVC, animated: true)
     }
     

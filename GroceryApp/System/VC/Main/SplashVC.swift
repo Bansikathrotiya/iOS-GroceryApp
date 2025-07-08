@@ -22,10 +22,10 @@ class SplashVC: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             
             if user.bool(forKey: "IsFirstTime") {
-                let tabbarVC = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC")
+                let tabbarVC = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC") as! TabBarVC
                 self.navigationController?.setViewControllers([tabbarVC], animated: true)
             } else {
-                let onboardingVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnBoradingVC")
+                let onboardingVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnBoradingVC") as! OnBoradingVC
                 self.navigationController?.setViewControllers([onboardingVC], animated: true)
             }
         }

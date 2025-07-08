@@ -24,6 +24,10 @@
 		18781C5C2E18E68900EDDB02 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18781C5B2E18E68900EDDB02 /* Home.storyboard */; };
 		18781C5F2E18E6B300EDDB02 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18781C5E2E18E6B300EDDB02 /* CategoryVC.swift */; };
 		18781C612E18F25400EDDB02 /* VegetablesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18781C602E18F25400EDDB02 /* VegetablesVC.swift */; };
+		187DF6BE2E1CEC5C001D763B /* MyAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DF6BD2E1CEC5C001D763B /* MyAddressVC.swift */; };
+		187DF6C62E1CEE64001D763B /* MyAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DF6C42E1CEE64001D763B /* MyAddressTableViewCell.swift */; };
+		187DF6C72E1CEE64001D763B /* MyAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187DF6C52E1CEE64001D763B /* MyAddressTableViewCell.xib */; };
+		187DF6C92E1CFE44001D763B /* AddAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DF6C82E1CFE44001D763B /* AddAddressVC.swift */; };
 		1888BF9A2E190C3D00E999F2 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1888BF992E190C3D00E999F2 /* Account.storyboard */; };
 		1888BF9D2E19295000E999F2 /* AboutmeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888BF9C2E19295000E999F2 /* AboutmeVC.swift */; };
 		1888BF9F2E19295D00E999F2 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888BF9E2E19295D00E999F2 /* NotificationVC.swift */; };
@@ -76,7 +80,7 @@
 		186E015C2E1787E400752E13 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		186E015E2E178C9A00752E13 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		186E01602E178FC300752E13 /* VerifyNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerifyNumberVC.swift; path = GroceryApp/System/VC/Login/VerifyNumberVC.swift; sourceTree = SOURCE_ROOT; };
-		186E01622E17967100752E13 /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = SOURCE_ROOT; };
+		186E01622E17967100752E13 /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OtpVC.swift; path = GroceryApp/System/VC/Login/OtpVC.swift; sourceTree = SOURCE_ROOT; };
 		186E01642E17976B00752E13 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		186E01672E1798A100752E13 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		186E01692E17A8F700752E13 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -89,6 +93,10 @@
 		18781C5B2E18E68900EDDB02 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		18781C5E2E18E6B300EDDB02 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		18781C602E18F25400EDDB02 /* VegetablesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegetablesVC.swift; sourceTree = "<group>"; };
+		187DF6BD2E1CEC5C001D763B /* MyAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyAddressVC.swift; path = GroceryApp/System/VC/Account/MyAddressVC.swift; sourceTree = SOURCE_ROOT; };
+		187DF6C42E1CEE64001D763B /* MyAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAddressTableViewCell.swift; sourceTree = "<group>"; };
+		187DF6C52E1CEE64001D763B /* MyAddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAddressTableViewCell.xib; sourceTree = "<group>"; };
+		187DF6C82E1CFE44001D763B /* AddAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressVC.swift; sourceTree = "<group>"; };
 		1888BF992E190C3D00E999F2 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		1888BF9C2E19295000E999F2 /* AboutmeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutmeVC.swift; sourceTree = "<group>"; };
 		1888BF9E2E19295D00E999F2 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
@@ -215,11 +223,23 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		187DF6BF2E1CEE0D001D763B /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				187DF6C42E1CEE64001D763B /* MyAddressTableViewCell.swift */,
+				187DF6C52E1CEE64001D763B /* MyAddressTableViewCell.xib */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
 		1888BF9B2E19293C00E999F2 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				187DF6BF2E1CEE0D001D763B /* XIB */,
 				1888BF9C2E19295000E999F2 /* AboutmeVC.swift */,
 				1888BF9E2E19295D00E999F2 /* NotificationVC.swift */,
+				187DF6BD2E1CEC5C001D763B /* MyAddressVC.swift */,
+				187DF6C82E1CFE44001D763B /* AddAddressVC.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -479,6 +499,7 @@
 				18C843A02E164E4D0065863B /* LaunchScreen.storyboard in Resources */,
 				186E016D2E17AC2B00752E13 /* CategoriesCollectionViewCell.xib in Resources */,
 				18C843B72E1666A00065863B /* Signup.storyboard in Resources */,
+				187DF6C72E1CEE64001D763B /* MyAddressTableViewCell.xib in Resources */,
 				1888BF9A2E190C3D00E999F2 /* Account.storyboard in Resources */,
 				186E01652E17976B00752E13 /* TabBar.storyboard in Resources */,
 				18C843A12E164E4D0065863B /* Main.storyboard in Resources */,
@@ -576,6 +597,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				186E01732E17B27900752E13 /* featuredProductsCollectionViewCell.swift in Sources */,
+				187DF6C62E1CEE64001D763B /* MyAddressTableViewCell.swift in Sources */,
 				18C8439B2E164E4D0065863B /* AppDelegate.swift in Sources */,
 				18C843BA2E1667050065863B /* SignupVC.swift in Sources */,
 				186E015D2E1787E400752E13 /* LoginVC.swift in Sources */,
@@ -584,10 +606,12 @@
 				1892D8202E17EE860017C6F6 /* CartVC.swift in Sources */,
 				18C8439D2E164E4D0065863B /* SplashVC.swift in Sources */,
 				186E016E2E17AC2B00752E13 /* CategoriesCollectionViewCell.swift in Sources */,
+				187DF6BE2E1CEC5C001D763B /* MyAddressVC.swift in Sources */,
 				186E01612E178FC300752E13 /* VerifyNumberVC.swift in Sources */,
 				18781C5F2E18E6B300EDDB02 /* CategoryVC.swift in Sources */,
 				186E015F2E178C9A00752E13 /* ForgotPasswordVC.swift in Sources */,
 				18781C612E18F25400EDDB02 /* VegetablesVC.swift in Sources */,
+				187DF6C92E1CFE44001D763B /* AddAddressVC.swift in Sources */,
 				186E01792E17E87C00752E13 /* FavouriteVC.swift in Sources */,
 				1892D81E2E17EE4F0017C6F6 /* CartTableviewCell.swift in Sources */,
 				186E01682E1798A100752E13 /* TabBarVC.swift in Sources */,
